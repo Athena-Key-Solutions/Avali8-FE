@@ -91,6 +91,17 @@ body{
   text-align: center;
 }
 
+.line{
+  background-color: rgb(97,97,97);
+  background-size: cover;
+  position: absolute;
+  display: inline;
+  top: 8.8%;
+  bottom: 90.1%;
+  width: 100%;
+  overflow: hidden;
+}
+
 .form{
   text-align: center;
   position: relative;
