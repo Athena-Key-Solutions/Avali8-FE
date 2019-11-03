@@ -5,8 +5,10 @@
     <title>Log in</title>
     <link rel="stylesheet" href="login.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
   <body>
+    <script src="login.js"></script>
     <header>
       <img id="logo" src="avali8br.png" alt="Logo da avali8">
       <ul>
@@ -31,7 +33,7 @@
                 <input id="passwordinput" type="text" name="senha" required="required" placeholder="Senha">
               </div>
             </div>
-            <input id="submit" type="submit" name="Entrar" value="Entrar">
+            <input id="submit" type="submit" onclick="submitLogin()" name="Entrar" value="Entrar">
           </div>
           <a href="#">Esqueceu a senha?</a>
         </div>
