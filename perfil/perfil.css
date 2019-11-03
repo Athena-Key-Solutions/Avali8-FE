@@ -19,7 +19,7 @@ header{
   width: 150px;
 }
 
-header p#username{
+header p#username1{
   float: right;
   color: white;
   margin-right: 8%;
@@ -52,21 +52,25 @@ header .dropbtn:focus{
   display: block;
   text-align: center;
   text-decoration: none;
-   color: black;
-   margin-bottom: 5%;
+  color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  font-weight: 500;
+  margin-top: 10%;
 }
 
 .dropdown-content{
   background-color: rgb(234,234,234);
-  display: none;
-  position: absolute;
+  position: relative;
   margin: auto;
-  width: 10%;
+  width: 200px;
+  height: 200px;
+  margin-top: -10.8%;
+  margin-right: 2%;
+  border-color: rgb(145,145,145);
+  border-style: solid;
+  border-width: thin;
   z-index: 1;
-}
-
-.dropdown:hover .dropdown-content{
-  display: block;
+  display: none;
 }
 
 .line{
@@ -223,7 +227,7 @@ header .dropbtn:focus{
   outline: none;
 }
 
-.perfilcontent p#username{
+.perfilcontent p#username2{
   position: relative;
   top: 28%;
   text-align: center;
@@ -234,6 +238,7 @@ header .dropbtn:focus{
   width: 60%;
   height: 10%;
   max-height: 10%;
+  max-width: 60%;
   top: 30%;
   margin-left: 20%;
   margin-right: 20%;
@@ -261,6 +266,7 @@ header .dropbtn:focus{
   position: relative;
   top: 50%;
   text-align: center;
+  margin-right: 5%;
 }
 
 .perfilcontent ul{
@@ -290,28 +296,32 @@ header .dropbtn:focus{
   padding-top: 1.4%;
   padding-bottom: 2%;
 }
+
+
 /*Quadro de medalhas*/
-li{
+.lista-certificados{
+  width: 100%;
+}
+
+.certificado {
   display: inline;
+  text-decoration: none;
 }
 
-li p{
-  margin-bottom: 7%;
+.medalha-cont {
+  display: inline-block;
+  text-decoration: none;
 }
 
-.quadrodemedalhas{
-  top: 0.5%;
-  position: relative;
+.medalha-certificado {
+  text-decoration: none;
 }
 
-.exemplomedalhas{
-  margin-top: 12%;
-  margin-left: 80%;
-  overflow: visible;
-  position: relative;
-  z-index: 1;
-}
-
-.exemplomedalhas img{
-  width: 65%;
+.medalha {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: solid black;
+  border-width: thin;
+  background-color: transparent;
 }
