@@ -52,7 +52,6 @@ outline: none;
 
 /*Mexendo nos itens da lista*/
 .dropdown-content a{
-display: block;
 text-align: center;
 text-decoration: none;
 color: black;
@@ -63,8 +62,8 @@ margin-bottom: 5%;
 .dropdown-content{
 background-color: rgb(234,234,234);
 display: none;
-position: absolute;
-width: 10%;
+position: -ms-page;
+width: 35%;
 z-index: 1;
 }
 
