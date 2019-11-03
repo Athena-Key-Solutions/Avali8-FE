@@ -318,10 +318,12 @@ header .dropbtn:focus{
 }
 
 .medalha {
-  height: 12px;
-  width: 12px;
+  height: 18px;
+  width: 18px;
   border-radius: 50%;
-  border: solid black;
+  border: solid rgb(145,145,145);
   border-width: thin;
   background-color: transparent;
+  margin-top: 36.5%;
+
 }
