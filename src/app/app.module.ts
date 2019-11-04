@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { QuestionModule } from './pages/question/question.module';
 import { UserModule } from './pages/user/user.module';
@@ -31,6 +32,7 @@ import { AboutComponent } from './components/pages/about/about.component';
     QuestionModule,
     UserModule,
     ExamModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
