@@ -1,20 +1,22 @@
-function submitLogin()
-{
-  var email = $('#emailinput').val();
-  var senha = $('#passwordinput').val();
-  alert(email);
-  alert(senha);
-  $('#emailinput').val('');
-  $('#passwordinput').val('');
+function submitLogin(){
 
- $.post("/login", {name: email, password: senha}, function(data, status){ alert("Data:" + data + "\nStatus:" + status); } );
+  var emailInput = $('#emailinput').val();
+  var senhaInput = $('#passwordinput').val();
+  //alert(email);
+  // alert(senha);
+  // $('#emailinput').val('');
+  // $('#passwordinput').val('');
 
-  if(status==200)
-  {
-    localStorage.setItem("user", JSON.stringify(data));
-  }
-  else {
-    alert("Log in fail.");
-  }
-  
+//  $.post("http://127.0.0.1:3333/avali8/api/v1/login", {email: email, password: senha}, function(data, status){ alert("Data:" + data + "\nStatus:" + status); });
+
+  var userLogin = {email: emailInput, password: senhaInput}
+  console.log(userLogin)
+
+$.ajax({
+    "url": "http://127.0.0.1:3333/avali8/api/v1/login",
+    "type": "POST",
+    "contentType": "application/json",
+    "data": JSON.stringify(userLogin)
+});
+
 }
