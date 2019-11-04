@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="Cadastro.css" />
 </head>
 <body>
+    <script src="Cadastro.js"></script>
   <div class="container">
-
     <div class="cabecalho">
       <img src="img/avali8br.png" class="logo"> <!--Logo Avali8-->
       <ul id= "cabeca"> <!--Botões do cabeçalho-->  
@@ -22,31 +22,31 @@
     <div class="content">
       <!--FORMULÁRIO DE CADASTRO-->
       <div id="cadastro">
-        <form method="post" action="" class="form">   
+        <div class="form">
           <h1 id="SignUp">Sign Up</h1> 
           <ui id="inputs">
             <p> 
-              <input id="nome" name="username" class="input" required="required" type="text" placeholder="Your name" />
+              <input id="nameinput" name="username" class="input" required="required" type="text" placeholder="Your name">
             </p>
             
             <p> 
-              <input id="email" name="email" class="input" required="required" type="email" placeholder="Email"/> 
+              <input id="emailinput" name="email" class="input" required="required" type="email" placeholder="Email"> 
             </p>
             
             <p> 
-              <input id="nome" name="name" class="input" required="required" type="text" placeholder="Username" />
+              <input id="usernameinput" name="name" class="input" required="required" type="text" placeholder="Username">
+            </p>
+
+            <p>
+              <input id="passwordinput" name="password" class="input" required="required" type="password" placeholder="Password">
             </p>
 
             <p> 
-              <input id="password" name="password" class="input" required="required" type="password" placeholder="Password"/>
-            </p>
-
-            <p> 
-              <input id="confirmpassword" class="input" name="confirmpassword" required="required" type="password" placeholder="Confirm password"/>
+              <input id="confirmpasswordinput" class="input" name="confirmpassword" required="required" type="password" placeholder="Confirm password">
             </p>
 
             <p id="caixadobotao"> 
-              <input type="submit" id="confirma" value="SIGN UP"/> 
+              <input type="submit" id="submit" name="SignUp" value="SignUp" onclick="confirmPassword()"> 
             </p>
             <!--
             <p class="link">  
@@ -54,8 +54,8 @@
               <a href="login-teste.html"> Sign In </a>
             </p>-->
           </ui>
-          <p id="cor">.</p>
-        </form>
+          <p id="cor"></p>
+        </div>
       </div>
     </div>
   </div>    
