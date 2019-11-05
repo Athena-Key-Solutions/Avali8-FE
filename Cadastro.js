@@ -1,37 +1,47 @@
 function submitSignUp()
 {
-    var name = document.getElementById("nameinput").value;
-    var email = document.getElementById("emailinput").value;
-    var username = document.getElementById("usernameinput").value;
-    var password = document.getElementById("passwordinput").value;
-    var confirmpassword = document.getElementById("confirmpasswordinput").value;
+    var nameInput = document.getElementById("nameinput").value;
+    var emailInput = document.getElementById("emailinput").value;
+    var usernameInput = document.getElementById("usernameinput").value;
+    var passwordInput = document.getElementById("passwordinput").value;
 
     //Printando as informações
 
-    alert(email);
-    alert(senha);
-    alert(username);
-    alert(password);
-    alert(confirmpassword);
+    alert(nameInput);
+    alert(emailInput);
+    alert(usernameInput);
+    alert(passwordInput);
 
     //Resetando campos do formulário
+    
+    /*
+    Com jQuery:
+
+    $(':input')
+    .not(':button, :submit, :reset, :hidden')
+    .val('')
+    .removeAttr('checked')
+    .removeAttr('selected');*/
+
+    //Sem jQuery:
     document.getElementById("nameinput").value = "";
     document.getElementById("emailinput").value = "";
     document.getElementById("usernameinput").value = "";
     document.getElementById("passwordinput").value = "";
     document.getElementById("confirmpasswordinput").value = "";
 
-    $.post("/signup", {name: email, password: senha}, function(data, status){ alert("Data:" + data + "\nStatus:" + status); } );
+  //$.post("/signup", {name: email, password: senha}, function(data, status){ alert("Data:" + data + "\nStatus:" + status); } );
 
     
-    if(status==200) //se ta tudo certo, salva
-    {
-        localStorage.setItem("user", JSON.stringify(data)); //mandando o form com a informação
-    }
-    else 
-    {
-        alert("Log in fail.");
-    }
+  var userSignUp = {name: nameInput, email: emailInput, username: usernameInput, password: passwordInput};
+  console.log(userSignUp);
+
+  $.ajax({
+    "type": "POST",
+    "url": "http://127.0.0.1:3333/avali8/api/v1/signup",
+    "data": JSON.stringify(userSignUp),
+    "contentType": "application/json"
+  });
 }
 
 function confirmPassword()
@@ -41,7 +51,7 @@ function confirmPassword()
     alert(password.value + " - " + confirmPassword.value);
     if(password.value == confirmPassword.value)
     {
-        alert("Eu vou chamar a função, mas ela não ta funcionando ainda, viu?");
+        alert("Welcome to Avali8!");
         submitSignUp();
     }
     else
@@ -49,25 +59,3 @@ function confirmPassword()
         alert("Your passwords aren't equal.");
     }
 }
-/*
-function submitLogin()
-{
-  var email = $('#emailinput').val();
-  var senha = $('#passwordinput').val();
-  alert(email);
-  alert(senha);
-  $('#emailinput').val('');
-  $('#passwordinput').val('');
-
- $.post("/login", {name: email, password: senha}, function(data, status){ alert("Data:" + data + "\nStatus:" + status); } );
-
-  if(status==200)
-  {
-    localStorage.setItem("user", JSON.stringify(data));
-  }
-  else {
-    alert("Log in fail.");
-  }
-  
-}
-*/
