@@ -13,7 +13,7 @@ function submitSignUp()
     $('#passwordinput').val('');
     $('#confirmpasswordinput').val('');
 
-    if(status==200)
+    if(status==200) //se ta tudo certo, salva
     {
     localStorage.setItem("user", JSON.stringify(data));
     }
