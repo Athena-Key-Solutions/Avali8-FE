@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   }
 
   test(){
-    let login = this.api.login({"email": "eve.holt@reqres.in",
-    "password": "cityslicka"}).subscribe();
+    let login = this.api.login({"email": "test523@gmail.com",
+    "password": "123"}).subscribe();
 
     return login;
   }

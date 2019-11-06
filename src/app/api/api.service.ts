@@ -22,23 +22,23 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-extractData(res: Response) {
-  let body = res.json();
-  return body || {};
-}
+  extractData(res: Response) {
+    let body = res.json();
+    return body || {};
+  }
 
-login(user:LoginPayload): Observable<any> {
-    return this.http.post('https://reqres.in/api/login',user).pipe(map(res => res));
-}
+  login(user:LoginPayload): Observable<any> {
+      return this.http.post('http://127.0.0.1:3333/avali8/api/v1/login',user).pipe(map(res => this.saveToken(res['token'])));
+  }
 
   private saveToken(token: string): void {
-    localStorage.setItem('usertoken', token)
+    sessionStorage.setItem('token', token)
     this.token = token
   }
 
-  private getToken(): string {
+  public getToken(): string {
     if (!this.token) {
-      this.token = localStorage.getItem('usertoken')
+      this.token = sessionStorage.getItem('token')
     }
     return this.token
   }
