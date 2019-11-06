@@ -4,29 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="EditarPerfil.css"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Edite seu perfil</title>
 </head>
 
 <body>
+  <script src="EditarPerfil.js"></script>
+  <div class="background">
+    
     <header>
-        <img id="logo" src="avali8br.png" alt="Logo da avali8">
-        <ul>
-          <div class="dropdown">
-            <button class="dropbtn"><i class="material-icons">menu</i></button>
-            <div class="dropdown-content">
-              <a href="#">Página inicial</a>
-              <a href="#">Meu Perfil</a>
-              <a href="#">Editar Perfil</a>
-              <a href="#">Sair</a>
-            </div>
+      <img id="logo" src="avali8br.png" alt="Logo da avali8">
+
+      <ul>
+        <div class="dropdown">
+          <button class="dropbtn"><i class="material-icons">menu</i></button>
+          <div class="dropdown-content">
+            <a href="#">Página inicial</a>
+            <a href="#">Meu Perfil</a>
+            <a href="#">Editar Perfil</a>
+            <a href="#">Sair</a>
           </div>
-        </ul>
-        <p id="username">Joaquim</p>
-        <div class="line">
-  
         </div>
-      </header>
+      </ul>
+
+      <p id="username">Joaquim</p>
+      
+      <div class="line">
+      </div>
+    </header>
+
+    <div class="form" id="form">
+      <p>Editar Perfil</p>
+    </div>
+</div>
 </body>
 
 </html>
