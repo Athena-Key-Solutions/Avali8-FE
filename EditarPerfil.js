@@ -2,7 +2,7 @@ function Browser()
 {
     var txt = "";
  
-    txt += "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+    txt += "<p> Browser CodeName: " + navigator.appCodeName + "</p>";
     txt += "<p>Browser Name: " + navigator.appName + "</p>";
     txt += "<p>Browser Version: " + navigator.appVersion + "</p>";
     txt += "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
