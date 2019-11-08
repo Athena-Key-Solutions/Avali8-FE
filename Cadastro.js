@@ -59,3 +59,5 @@ function confirmPassword()
         alert("Your passwords aren't equal.");
     }
 }
+
+module.exports = confirmPassword;
