@@ -1,1 +1,22 @@
-<button (click)="test()">test</button>
+<div class="submain">
+    <form method="POST" action="">
+        <h1 class="rows login-title">Login</h1>
+        <div class="formbox">
+            <div class="inputboxes">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="e-mail" placeholder="E-mail" [(ngModel)]="data.email" required >
+                </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="senha" placeholder="Password" [(ngModel)]="data.password" required>
+            </div>
+            </div>
+            <input id="submit" type="submit" (click)="login(data)" name="Entrar" value="Login">
+        </div>
+    </form>
+    <div style="margin-left: 80px;">
+        <a href="#"class="forgot-password">Forgot password?</a>
+    </div>
+</div>
+      
+
+
