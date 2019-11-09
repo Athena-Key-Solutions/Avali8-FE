@@ -12,6 +12,13 @@ export interface LoginPayload{
   password: string
 }
 
+export interface SignUpPayLoad{
+  name: string
+  username: string
+  email: string
+  password: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,10 +33,16 @@ export class ApiService {
     let body = res.json();
     return body || {};
   }
+  
+  signUp(user:SignUpPayLoad): Observable<any> {
+    return this.http.post('http://127.0.0.1:3333/avali8/api/v1/signup', user).pipe(map(res => this.saveToken(res['token'])));
+  }
 
   login(user:LoginPayload): Observable<any> {
       return this.http.post('http://127.0.0.1:3333/avali8/api/v1/login',user).pipe(map(res => this.saveToken(res['token'])));
   }
+
+  
 
   private saveToken(token: string): void {
     sessionStorage.setItem('token', token)

@@ -54,26 +54,26 @@
     <form method="post" action="">   
 
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Name" required/>
+        <input type="text" class="form-control" placeholder="Name" [(ngModel)]="signUp.name"  name="name"required/>
     </div>
     
     <div class="form-group">
-            <input type="text" class="form-control" placeholder="User Name" required/>
+            <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="signUp.username" name="username"required/>
     </div>
 
     <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email" required/>
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="signUp.email" name="email" required/>
     </div>
 
     <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" required/>
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="signUp.password" name="password" required/>
     </div>
 
     <div class="form-group">
-        <input type="password" class="form-control" placeholder="Repeat Password" required/>
+        <input type="password" class="form-control" placeholder="Repeat Password" name="repeatpassword" required/>
     </div>
     
-    <button type="submit" class="btn btn-primary signup-button">Sign Up</button>
+    <button type="submit" class="btn btn-primary signup-button" (click)="onSign(signUp)">Sign Up</button>
 
     </form>
 

@@ -14,6 +14,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { SignupComponent } from './components/pages/signup/signup.component';
 import { AboutComponent } from './components/pages/about/about.component';
+import { FormsModule }  from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AboutComponent } from './components/pages/about/about.component';
     QuestionModule,
     UserModule,
     ExamModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
