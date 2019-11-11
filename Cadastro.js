@@ -44,11 +44,16 @@ function submitSignUp()
   });
 }
 
-function confirmPassword()
+function getPass()
 {
-    var password = document.getElementById("passwordinput");
-    var confirmPassword = document.getElementById("confirmpasswordinput");
-    alert(password.value + " - " + confirmPassword.value);
+  var password = document.getElementById("passwordinput");
+  var confirmPassword = document.getElementById("confirmpasswordinput");
+  alert(password.value + " - " + confirmPassword.value);
+  confirmPassword(password, confirmPassword);
+}
+
+function confirmPassword(password, confirmPassword)
+{
     if(password.value == confirmPassword.value)
     {
         alert("Welcome to Avali8!");
@@ -59,5 +64,4 @@ function confirmPassword()
         alert("Your passwords aren't equal.");
     }
 }
-
 module.exports = confirmPassword;
