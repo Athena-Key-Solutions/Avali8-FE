@@ -49,27 +49,19 @@ function getPass()
   var password = document.getElementById("passwordinput");
   var confirmPassword = document.getElementById("confirmpasswordinput");
   alert(password.value + " - " + confirmPassword.value);
-  confirmPassword(password, confirmPassword);
+  confirmPassword(password.value, confirmPassword.value);
 }
 
 function confirmPassword(password, confirmPassword)
 {
     if(password == confirmPassword)
     {
-        alert("Welcome to Avali8!");
-        return "Welcome to Avali8!";
-        submitSignUp();
+        return "Welcome to Avali8";
+        //submitSignUp();
     }
     else
     {
-        alert("Your passwords aren't equal.");
-        return "Nop";
+        return "Error";
     }
 }
 module.exports = confirmPassword;
-
-
-function sum(a, b) {
-  return a + b;
-}
-module.exports = sum;

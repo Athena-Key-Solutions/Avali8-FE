@@ -1,6 +1,6 @@
 
-const confirmPassword = require('./Cadastro');
+const confirmPassword = require('./cadastro');
 
-test('confirm passwords', () => {
-  expect(confirmPassword("senha","senha").toBe("Welcome to Avali8!"));
+test('Se as duas senhas forem iguais, deve retornar -Welcome to Avali8-', () => {
+  expect(confirmPassword('123','123')).toBe('Welcome to Avali8');
 });
