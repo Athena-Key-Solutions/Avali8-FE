@@ -54,14 +54,22 @@ function getPass()
 
 function confirmPassword(password, confirmPassword)
 {
-    if(password.value == confirmPassword.value)
+    if(password == confirmPassword)
     {
         alert("Welcome to Avali8!");
+        return "Welcome to Avali8!";
         submitSignUp();
     }
     else
     {
         alert("Your passwords aren't equal.");
+        return "Nop";
     }
 }
 module.exports = confirmPassword;
+
+
+function sum(a, b) {
+  return a + b;
+}
+module.exports = sum;
