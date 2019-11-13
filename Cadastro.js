@@ -47,14 +47,17 @@ function submitSignUp()
 }
 
 function getPass()
-{
-  var password = document.getElementById("passwordinput");
-  var confirmInput = document.getElementById("confirmpasswordinput");
-  var isfull = verifyInput(); //se for true, ta tudo certo, senao tem algo vazio
+{ 
+  var nameInput = document.getElementById("nameinput").value;
+  var emailInput = document.getElementById("emailinput").value;
+  var usernameInput = document.getElementById("usernameinput").value;
+  var passwordInput = document.getElementById("passwordinput").value;
+  var confirmInput = document.getElementById("confirmpasswordinput").value;
+  var isfull = verifyInput(nameInput, emailInput, usernameInput, passwordInput, confirmInput); //se for true, ta tudo certo, senao tem algo vazio
   if(isfull == true)
   {
-    alert(password.value + " - " + confirmInput.value);
-    var ok = confirmPassword(password.value, confirmInput.value);
+    alert(passwordInput + " - " + confirmInput);
+    var ok = confirmPassword(passwordInput, confirmInput);
     if(ok == "Welcome to Avali8") 
     {
       submitSignUp();
@@ -62,33 +65,28 @@ function getPass()
   }
 }
 
-function verifyInput()
+function verifyInput(nameInput, emailInput, usernameInput, passwordInput, confirmInput)
 {
   var aux = 0;
-  var nameInput = document.getElementById("nameinput").value;
-  var emailInput = document.getElementById("emailinput").value;
-  var usernameInput = document.getElementById("usernameinput").value;
-  var passwordInput = document.getElementById("passwordinput").value;
-  var confirmInput = document.getElementById("confirmpasswordinput").value;
   if(nameInput == "")
   {
-    alert("Nome vazio!");
+    //alert("Nome vazio!");
     aux = aux + 1;
     if(emailInput == "")  
     {
-      alert("Email vazio!");
+      //alert("Email vazio!");
       aux = aux + 1;
       if(usernameInput == "")
       {
-        alert("Nome de usuário vazio!");
+        //alert("Nome de usuário vazio!");
         aux = aux + 1;
         if(passwordInput == "")
         {
-          alert("Senha vazia!");
+          //alert("Senha vazia!");
           aux = aux + 1;
           if(confirmInput == "")
           {
-            alert("Senha de confirmação vazia!");
+            //alert("Senha de confirmação vazia!");
             aux = aux + 1;
           }
         }
@@ -105,6 +103,7 @@ function verifyInput()
   }
   
 }
+module.exports = verifyInput;
 
 function confirmPassword(password, confirmInput)
 {
@@ -118,4 +117,4 @@ function confirmPassword(password, confirmInput)
         return "Error";
     }
 }
-module.exports = confirmPassword;
+//module.exports = confirmPassword;
