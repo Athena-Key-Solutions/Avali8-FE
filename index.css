@@ -1,0 +1,60 @@
+/*Geral*/
+/*Resetando margin e padding padrões do navegador*/
+body{
+    margin: 0;
+    padding: 0;
+}
+  
+  /*Cabeçalho da página*/
+header{
+    background-color: #2A2A2A;
+    width: 100%;
+    height: 55px;
+}
+  
+#logo{
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10%;
+    width: 150px;
+}
+
+
+header a{
+    margin: 15px;
+}
+
+header ul{
+    display: inline;
+    float: right;
+    margin-right: 5%;
+}
+a{
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+    color: white;
+    font-weight: 900;
+}
+
+.main{
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top:58px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.background{
+    background-color: rgba(0,0,0,0.6);
+    background-size: cover;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+  
