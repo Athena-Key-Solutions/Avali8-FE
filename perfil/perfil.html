@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="perfil.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    <script src="header.js"></script>
+    <script src="perfil.js"></script>
+    <header>
+      <img id="logo" src="img/avali8br.png" alt="Logo da avali8">
+      <ul>
+        <p id="username1"></p>
+        <div class="dropdown">
+          <button type="button" class="dropbtn" onclick="displayDropDownCont('drop')"><i class="material-icons">menu</i></button>
+        </div>
+      </ul>
+      <div id="drop" class="dropdown-content">
+        <a href="#">Página inicial</a>
+        <a href="#">Meu Perfil</a>
+        <a href="#">Editar Perfil</a>
+        <a href="#">Sair</a>
+      </div>
+      <div class="line"></div>
+    </header>
+    <div class="background">
+      <div class="main">
+        <div class="perfil">
+          <div class="perfilheader">
+          <p>Meu Perfil</p>
+          </div>
+          <div class="perfilcontent">
+            <div class="avatarcontainer">
+              <img src="img/avatar-png-18.png" alt="Foto Avatar">
+            </div>
+            <div class="editarfotocontainer">
+              <button id="editarfoto" type="button" name="button">Editar Foto</button>
+            </div>
+            <p id="username2"></p>
+            <p id="bio"></p>
+            <div class="editardescriçãocontainer">
+              <button id="editardescrição" onclick="displayEditarPerfil('editarbio')" type="button" name="button">Editar descrição</button>
+            </div>
+            <div class="redessocias">
+              <ul>
+                <a href="#"><img id="facebook" src="img/facebookicon.png"></a>
+                <a href="#"><img id="linkedin" src="img/linkedinicon.png"></a>
+                <a href="#"><img id="twitter" src="img/twittericon.png"></a>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="medalhas">
+          <div class="medalhasheader">
+          <p>Medalhas</p>
+          </div>
+          <div class="medalhascontent" style="display:flex">
+            <div id="certificações" class="certificações" style="width:40%;height:92%;margin-left:10%; margin-top:4.8%;position:relative;z-index:1">
+
+            </div>
+            <div id="quadro" class="quadrodemedalhas" style="width:10%;height:92%;margin-left:20%; margin-top:5%;position:relative;z-index:1">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="editarbio" style="text-align:center;position: relative;top: 48.2%;margin-left: 21%;background-color: rgb(240,240,240); width: 28%;display:none">
+        <form action="" method="post">
+          <textarea id="myText" maxlength="308" rows="10" cols="25"></textarea>
+        </form>
+        <button type="submit" onclick="document.getElementById('editarbio').style.display = 'none'; attBio()" name="button">Enviar</button>
+      </div>
+    </div>
+  </body>
+</html>
