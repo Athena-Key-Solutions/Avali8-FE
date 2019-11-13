@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable, of } from 'rxjs'
 import { map } from 'rxjs/operators'
+import { environment } from '../../environments/environment';
+import { User } from '../api/models/User.model';
+import {Router} from "@angular/router";
+
 
 export interface TokenResponse {
   token: string
@@ -24,10 +28,13 @@ export interface SignUpPayLoad{
 })
 
 export class ApiService {
-  
-  private token: string
+  private baseURL:string = environment.apiUrl;  
+  private token: string;
+  private user: User;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) {}
+
+  loggedIn:boolean = true;
 
   extractData(res: Response) {
     let body = res.json();
@@ -35,14 +42,26 @@ export class ApiService {
   }
   
   signUp(user:SignUpPayLoad): Observable<any> {
-    return this.http.post('http://127.0.0.1:3333/avali8/api/v1/signup', user).pipe(map(res => this.saveToken(res['token'])));
+    return this.http.post(this.baseURL + 'signup', user).pipe(map(res => res.toString()));
   }
 
   login(user:LoginPayload): Observable<any> {
-      return this.http.post('http://127.0.0.1:3333/avali8/api/v1/login',user).pipe(map(res => this.saveToken(res['token'])));
+      return this.http.post(this.baseURL + 'login', user).pipe(map(
+        
+        res => {
+          this.saveToken(res['token']);
+          this.loggedIn = true;
+          this.router.navigateByUrl('/logged');
+        }
+        
+      ));
   }
 
-  
+  logout(token){
+    const url = this.baseURL + "logout"
+    sessionStorage.clear();
+    return this.http.post(url,{"token":token}).subscribe();
+  }
 
   private saveToken(token: string): void {
     sessionStorage.setItem('token', token)
@@ -54,5 +73,22 @@ export class ApiService {
       this.token = sessionStorage.getItem('token')
     }
     return this.token
+  }
+
+  public getUser(token:string):Observable<any>{
+    
+    if(this.user == null){
+      
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': token
+      });
+
+      const url = this.baseURL + 'user';
+
+      return this.http.post(url,{"token":token})
+
+    }
+
   }
 }

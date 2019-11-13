@@ -1,29 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../api/api.service'; 
+import { Component, OnInit, ViewChild, ElementRef, Injectable } from '@angular/core';
+import { ApiService, LoginPayload } from '../../../api/api.service'; 
 
-class loginData {
-  constructor(
-    email: string,
-    password: string
-  ){}
-}
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+@Injectable()
 export class LoginComponent implements OnInit {
-  data = new loginData('', '');
 
-  constructor(private api: ApiService ) { }
+  constructor(private api: ApiService) { }
+  
+  ngOnInit() { }
 
-  ngOnInit() {
+
+  login(email,password){
+
+    const loginUser = {
+      "email":email,
+      "password":password
+    }
+
+    return this.api.login(loginUser).subscribe();
     
-  }
-
-  login(login){
-    return this.api.login(login).subscribe();;
   }
 
 }

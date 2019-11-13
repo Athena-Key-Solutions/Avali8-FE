@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  apiUrl: 'http://127.0.0.1:3333/avali8/api/v1/',
   production: false
 };
 
