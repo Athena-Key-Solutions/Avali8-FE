@@ -1,8 +1,10 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, ChangeDetectionStrategy } from '@angular/core';
 import { ApiService } from 'src/app/api/api.service';
 import { User } from 'src/app/api/models/User.model';
 import { map } from 'rxjs/operators'
 import {Router} from "@angular/router";
+import { Observable } from 'rxjs';
+import { AuthenticationService } from 'src/app/api/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -12,26 +14,32 @@ import {Router} from "@angular/router";
 
 export class HeaderComponent implements OnInit {
 
-  constructor(private api:ApiService, private router:Router) { }
+  isLoggedIn$: Observable<boolean>;                  // {1}
 
-  ngOnInit() {
-    this.loadUser()
+  constructor(private api:ApiService, private authService: AuthenticationService) {
   }
 
-  token:string = this.api.getToken();
-  user:User;
+  user:User = JSON.parse(sessionStorage.getItem('user'));
+  token:string;
 
-  loadUser(){
-    
-    if(this.token != null){
-      this.api.getUser(this.token).pipe(map(res => this.user = res)).subscribe();
-    }
+  ngOnInit() {
+    this.isLoggedIn$ = this.authService.isLoggedIn; // {2}
+    this.token = sessionStorage.getItem('token');
+    this.isLoggedIn$.pipe(map((res) => {
+      if(res){
+        this.authService.getUser().pipe(map((res) => console.log(res))).subscribe();
+        console.log(res);
+      }
+    })).subscribe();
+  }
+
+  doSomething(event) {
+    console.log("doSomething");
   }
 
   logout(){
-    this.api.logout(this.token);
-    this.router.navigate(['/']);
-    this.user = null;
+    this.authService.logout(this.token);                      // {3}
+    this.token = null;
   }
 
 }

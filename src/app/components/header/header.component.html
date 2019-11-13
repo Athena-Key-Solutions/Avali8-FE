@@ -17,8 +17,18 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/about">About</a>
       </li>
+
+      <ng-template [ngIf]="(this.isLoggedIn$ | async) || this.token != null" [ngIfElse]="notLogged">
+        <li class="nav-item" routerLinkActive="active" (ngModelChange)="doSomething($event)">
+          <a class="nav-link" routerLink="/logged">{{user.name}}</a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" href="#" (click)="logout()">Logout</a>
+        </li>
+       </ng-template>
       
-      <ng-template [ngIf]="user == undefined && user == null" [ngIfElse]="logged">
+      <ng-template #notLogged>
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" routerLink="/signup">Sign Up</a>
         </li>
@@ -28,15 +38,7 @@
         </li>
        </ng-template>
        
-       <ng-template #logged>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link">{{user.name}}</a>
-        </li>
-
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" href="#" (click)="logout()">Logout</a>
-        </li>
-       </ng-template>
+       
       
     </ul>
   </div>

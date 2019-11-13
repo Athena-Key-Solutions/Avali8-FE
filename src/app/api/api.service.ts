@@ -51,7 +51,7 @@ export class ApiService {
         res => {
           this.saveToken(res['token']);
           this.loggedIn = true;
-          this.router.navigateByUrl('/logged');
+          this.getUser(res['token']).pipe(map((res) => this.saveUser(res))).subscribe()
         }
         
       ));
@@ -68,6 +68,10 @@ export class ApiService {
     this.token = token
   }
 
+  private saveUser(user:User){
+    sessionStorage.setItem('user', JSON.stringify(user));
+  }
+
   public getToken(): string {
     if (!this.token) {
       this.token = sessionStorage.getItem('token')
@@ -75,7 +79,11 @@ export class ApiService {
     return this.token
   }
 
-  public getUser(token:string):Observable<any>{
+  public getUserSession(){
+    return sessionStorage.getItem('user');
+  }
+
+  private getUser(token:string):Observable<any>{
     
     if(this.user == null){
       
@@ -91,4 +99,5 @@ export class ApiService {
     }
 
   }
+
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Injectable } from '@angular/core';
 import { ApiService, LoginPayload } from '../../../api/api.service'; 
+import { AuthenticationService } from 'src/app/api/authentication.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ApiService, LoginPayload } from '../../../api/api.service';
 @Injectable()
 export class LoginComponent implements OnInit {
 
-  constructor(private api: ApiService) { }
+  constructor(private auth: AuthenticationService) { }
   
   ngOnInit() { }
 
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
       "password":password
     }
 
-    return this.api.login(loginUser).subscribe();
+    return this.auth.login(loginUser);
     
   }
 
