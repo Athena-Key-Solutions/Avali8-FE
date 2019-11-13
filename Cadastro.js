@@ -1,5 +1,7 @@
 function submitSignUp()
 {
+    //Confirmando o cadastro
+    alert("Cadastrado, redirecionando...");
     var nameInput = document.getElementById("nameinput").value;
     var emailInput = document.getElementById("emailinput").value;
     var usernameInput = document.getElementById("usernameinput").value;
@@ -47,14 +49,66 @@ function submitSignUp()
 function getPass()
 {
   var password = document.getElementById("passwordinput");
-  var confirmPassword = document.getElementById("confirmpasswordinput");
-  alert(password.value + " - " + confirmPassword.value);
-  confirmPassword(password.value, confirmPassword.value);
+  var confirmInput = document.getElementById("confirmpasswordinput");
+  var isfull = verifyInput(); //se for true, ta tudo certo, senao tem algo vazio
+  if(isfull == true)
+  {
+    alert(password.value + " - " + confirmInput.value);
+    var ok = confirmPassword(password.value, confirmInput.value);
+    if(ok == "Welcome to Avali8") 
+    {
+      submitSignUp();
+    }
+  }
 }
 
-function confirmPassword(password, confirmPassword)
+function verifyInput()
 {
-    if(password == confirmPassword)
+  var aux = 0;
+  var nameInput = document.getElementById("nameinput").value;
+  var emailInput = document.getElementById("emailinput").value;
+  var usernameInput = document.getElementById("usernameinput").value;
+  var passwordInput = document.getElementById("passwordinput").value;
+  var confirmInput = document.getElementById("confirmpasswordinput").value;
+  if(nameInput == "")
+  {
+    alert("Nome vazio!");
+    aux = aux + 1;
+    if(emailInput == "")  
+    {
+      alert("Email vazio!");
+      aux = aux + 1;
+      if(usernameInput == "")
+      {
+        alert("Nome de usuário vazio!");
+        aux = aux + 1;
+        if(passwordInput == "")
+        {
+          alert("Senha vazia!");
+          aux = aux + 1;
+          if(confirmInput == "")
+          {
+            alert("Senha de confirmação vazia!");
+            aux = aux + 1;
+          }
+        }
+      }
+    }
+  }
+  if(aux == 0)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+  
+}
+
+function confirmPassword(password, confirmInput)
+{
+    if(password == confirmInput)
     {
         return "Welcome to Avali8";
         //submitSignUp();
