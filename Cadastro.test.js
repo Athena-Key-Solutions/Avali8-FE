@@ -7,7 +7,7 @@ test('Se as duas senhas forem iguais, deve retornar -Welcome to Avali8-', () => 
 
 const verifyInput = require('./cadastro');
 
-test('Se receber tudo vazio deve retornar falso',() =>{
+test('Se todos os inputs estiverem vazios deve retornar falso',() =>{
   expect(verifyInput("","","","","")).toBe(false);
 }
 );
