@@ -26,3 +26,14 @@ function logout(){
   }); 
 }
 
+function perfil(){
+   window.location.replace("../perfil/perfil.html");
+}
+
+function inicial(){
+   window.location.replace("../tela-inicial-logado/tela-inicial-logado.html");
+}
+
+function editarPerfil(){
+   // window.location.replace("link");
+}
