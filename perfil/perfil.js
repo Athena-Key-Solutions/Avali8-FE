@@ -74,5 +74,7 @@ $(document).ready(function(){
     document.getElementById('username1').innerHTML = user.name;
     document.getElementById('username2').innerHTML = user.name;
     document.getElementById('bio').innerHTML = user.bio;
-    preencherMedalhas(user.medalhas);
+
+    var medalhasExemplo = [{certificado: "Python", score:3}, {certificado: "C", score:3}, {certificado: "C#", score:3},{certificado: "C++", score:3},{certificado: "Java", score:3},{certificado: "Ruby", score:2},{certificado: "JavaScript", score:3},{certificado: "Haskell", score:1},{certificado: "Closure", score:1},{certificado: "Ada", score:2},{certificado: "Go", score:3}, {certificado: "Pascal", score:1},{certificado: "Fortran", score:2},{certificado: "Lisp", score:3},{certificado: "Prolog", score:2},{certificado: "Gödel", score:1}];
+    preencherMedalhas(medalhasExemplo);
 });
