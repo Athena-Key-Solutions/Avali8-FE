@@ -163,6 +163,44 @@ class UserController {
     
     
   }
+  
+  async makeExam({request,response,params,auth}){
+    const exam = await Exam.find(params.id)
+    //const user = await auth.getUser()
+    const questions = await Database.from('questions').where('exam_id',exam.id)
+    let alternatives = [];
+    const questionslength = (await exam.questions().count())[0]['count(*)']
+    /*let requestQuestions = []
+
+    for(let i = 0; i < questionslength; i++){
+      requestQuestions.push("Question"+(i+1))
+    }*/
+
+    for(let i = 0; i < questionslength; i++){
+      alternatives.push(await Database.from('alternatives').where('question_id',questions[i].id))
+    }
+
+    /*const data = request.only(requestQuestions)*/
+    /*let score = 0
+
+    for(let i = 0; i < questionslength; i++){
+      
+      if(data[requestQuestions[i]]['selected_alternative'] == alternatives[i][0].right_alternative){
+        score++;
+      }
+    }*/
+
+    /*let userMake = await user.makeExams().attach([exam.id], (row) => {
+      row.score = score
+    })
+
+    user.progress += score
+    await user.save()*/
+
+    return {exam,questions, alternatives} 
+
+  }
+
 
 }
 
