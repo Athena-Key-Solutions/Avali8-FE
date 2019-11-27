@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crie sua conta no avali8!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="Cadastro.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <script src="Cadastro.js"></script>
+  <div class="container">
+    <div class="cabecalho">
+      <img src="img/avali8br.png" class="logo"> <!--Logo Avali8-->
+      <ul id= "cabeca"> <!--Botões do cabeçalho-->  
+        <a href="" class ="Botao" id="Home">home</a>
+        <a  class ="Botao" id="Login" onclick="window.location.replace('../login/login.html')" >login</a>
+        <a href="" class ="Botao" id="Cadastro">sign up</a>
+        <a href="" class ="Botao" id="Contato">contact</a>
+      </ul>
+    </div>
+    <div class="line"></div>
+    <div class="content">
+      <!--FORMULÁRIO DE CADASTRO-->
+      <div id="cadastro">
+        <div class="form">
+          <h1 id="SignUp">Sign Up</h1> 
+          <ui id="inputs">
+            <p> 
+              <input id="nameinput" name="username" class="input" required="required" type="text" placeholder="Your name">
+            </p>
+            
+            <p> 
+              <input id="emailinput" name="email" class="input" required="required" type="email" placeholder="Email"> 
+            </p>
+            
+            <p> 
+              <input id="usernameinput" name="name" class="input" required="required" type="text" placeholder="Username">
+            </p>
+
+            <p>
+              <input id="passwordinput" name="password" class="input" required="required" type="password" placeholder="Password">
+            </p>
+
+            <p> 
+              <input id="confirmpasswordinput" class="input" name="confirmpassword" required="required" type="password" placeholder="Confirm password">
+            </p>
+
+            <p id="caixadobotao"> 
+              <input type="submit" id="submit" name="SignUp" value="SignUp" onclick="getPass()"> 
+            </p>
+          </ui>
+          <p id="cor"></p>
+        </div>
+      </div>
+    </div>
+  </div>    
+</body>
+</html>

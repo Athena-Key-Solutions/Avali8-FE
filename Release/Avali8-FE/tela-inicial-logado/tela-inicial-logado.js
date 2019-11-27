@@ -19,12 +19,12 @@ $(document).ready(function(){
 
       function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
-          ['Aluno', 'Pontos'],
-          ["Aluno 1", 44],
-          ["Aluno 2", 31],
-          ["Aluno 3", 12],
-          ["Aluno 4", 10],
-          ["Aluno 4", 3]
+          ['User', 'Score'],
+          ["User 1", 44],
+          ["User 2", 31],
+          ["User 3", 12],
+          ["User 4", 10],
+          ["User 4", 3]
         ]);
 
         var options = {

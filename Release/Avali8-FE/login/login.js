@@ -27,16 +27,16 @@ function submitLogin(){
         "success": function(response){
           var user = {token :response.token, email: emailInput, password: senhaInput};
           sessionStorage.setItem("user", JSON.stringify(user) );
-          alert("Login bem sucedido");
+          alert("Successful Login");
           window.location.replace("../tela-inicial-logado/tela-inicial-logado.html");
         },
         "error": function(){
-          alert("Usuário ou senha inválidos");
+          alert("Username or Password is invalid");
         }
     });
 
   }else{
-    alert("Preencha os campos!!");
+    alert("Fill in the fields!!");
   }
   //var teste = JSON.parse(sessionStorage.getItem('user'));
   //console.log(teste.token);

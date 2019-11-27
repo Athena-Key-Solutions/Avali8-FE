@@ -20,7 +20,7 @@ function logout(){
       "success": function(response){
          console.log(response);
          sessionStorage.clear();
-         alert("Log out bem sucedido");
+         alert("Sucessfull logout");
          window.location.replace("../login/login.html");
       }
   }); 

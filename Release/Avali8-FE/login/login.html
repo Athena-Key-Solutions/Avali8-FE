@@ -14,14 +14,14 @@
       <ul>
         <a href="#">home</a>
         <a href="#">login</a>
-        <a href="#">cadastro</a>
-        <a href="#">contato</a>
+        <a href="#" onclick="window.location.replace('../cadastro/Cadastro.html')">sign up</a>
+        <a href="#">contact</a>
       </ul>
     </header>
     <div class="main">
       <div class="background">
         <div class="submain">
-          <p>Já sou cadastrado</p>
+          <p>I am already registered</p>
           <div class="formbox">
             <div class="inputboxes">
               <div class="emailbox">
@@ -30,13 +30,13 @@
               </div>
               <div class="passwordbox">
                 <i class="material-icons">lock</i>
-                <input id="passwordinput" type="password" name="senha" required="required" placeholder="Senha">
+                <input id="passwordinput" type="password" name="senha" required="required" placeholder="Password">
               </div>
             </div>
-            <input id="submit" type="submit" onclick="submitLogin()" name="Entrar" value="Entrar">
+            <input id="submit" type="submit" onclick="submitLogin()" name="Entrar" value="Log in">
           </div>
           <br>
-          <a href="#">Esqueceu a senha?</a>
+          <a href="#">Forgot your password?</a>
         </div>
       </div>
     </div>
