@@ -3,6 +3,7 @@
 const User = use("App/Models/User")
 const Question = use("App/Models/Question")
 const Exam = use("App/Models/Exam")
+const Database = use('Database')
 const { validate } = use('Validator');
 
 class UserController {
@@ -201,6 +202,24 @@ class UserController {
 
   }
 
+  async submitedExam({request,response,params,auth}){
+    
+    const exam = await Exam.find(params.id)
+    const user = await auth.getUser()
+
+    const data = request.only(['score'])
+    
+    let userMake = await user.makeExams().attach([exam.id], (row) => {
+      row.score = data.score
+    })
+
+    user.progress += data.score
+    await user.save()
+
+    // response.status(200).send({status: 'ok'})
+    return userMake
+
+  }
 
 }
 

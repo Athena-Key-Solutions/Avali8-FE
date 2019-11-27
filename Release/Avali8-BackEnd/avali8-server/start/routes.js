@@ -34,6 +34,7 @@ Route.group(() => {
   Route.post('/examlist','UserController.listExam')
   Route.post('/userlist','UserController.list')
   Route.post('/make-exam/exam/:id','UserController.makeExam')
+  Route.post('/submit-exam/exam/:id','UserController.submitedExam')
 }).prefix('avali8/api/v1').middleware('auth')
 
 Route.group(() => {
