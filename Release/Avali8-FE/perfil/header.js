@@ -35,5 +35,5 @@ function inicial(){
 }
 
 function editarPerfil(){
-   // window.location.replace("link");
+   window.location.replace("../EditPerfil/EditarPerfil.html");
 }
