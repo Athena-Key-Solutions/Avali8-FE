@@ -10,7 +10,7 @@ class Exam extends Model {
     }
 
     makeExams() {
-        return this.belongsToMany('App/Models/User','exam_id','user_id','id','id').pivotTable('user_make_exam').withTimestamps()
+        return this.belongsToMany('App/Models/User','exam_id','user_id','id','id').pivotTable('user_makes_exam').withTimestamps()
     }
 
     users() {
