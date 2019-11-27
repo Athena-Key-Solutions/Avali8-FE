@@ -126,6 +126,72 @@ body{
 {
     margin-top: 20px;
 }
-.inputs{
+.inputstext{
     margin-left: 100px;
+    margin-right: 0%;
+    margin-top: 5px;
+}
+
+.input{
+    margin-left: 10%;
+}
+
+#nameinput{
+    margin-left: 16.4%;
+}
+
+#emailinput{
+    margin-left: 16.7%;
+}
+
+#usernameinput{
+    margin-left: 12.4%;
+}
+
+#passwordinput
+{
+    margin-left: 13%;
+}
+
+#confpasswordinput
+{
+    margin-left: 4.8%;
+}
+
+
+#buttonslist{
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
+.syncbutton{
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #707E97;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
+#twitterbutton{
+    background-color: #159879;
+}
+
+.savebutton{
+    margin: auto;
+    position: relative;
+    text-align: center;
+}
+
+#savebutton{
+    text-decoration: none;
+    color: white;
+    background-color: #0761E2;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
 }
