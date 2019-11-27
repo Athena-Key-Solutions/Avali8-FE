@@ -43,7 +43,7 @@ class User extends Model {
   }
 
   makeExams() {
-    return this.belongsToMany('App/Models/Exam','user_id','exam_id','id','id').pivotTable('user_make_exam').withTimestamps()
+    return this.belongsToMany('App/Models/Exam','user_id','exam_id','id','id').pivotTable('user_makes_exam').withTimestamps()
   }
 
   static get traits () {
