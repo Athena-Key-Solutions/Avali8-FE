@@ -43,8 +43,8 @@ function submitSignUp()
     "url": "http://127.0.0.1:3333/avali8/api/v1/signup",
     "data": JSON.stringify(userSignUp),
     "contentType": "application/json",
-    "success": function(){
-      alert("Signed up");
+    "success": function(response){
+      alert(response.message);
     },
     "error": function(response){
       alert(JSON.stringify(response));

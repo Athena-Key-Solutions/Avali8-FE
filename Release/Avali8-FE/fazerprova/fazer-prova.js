@@ -9,6 +9,7 @@ entregar = function(){
   var label = document.getElementsByTagName("label");
   
   var exam_readed = JSON.parse(sessionStorage.getItem('exam_readed'));
+  var user = JSON.parse(sessionStorage.getItem('user'));
 
   var total_score = 0;
 
@@ -84,6 +85,16 @@ entregar = function(){
     }
   }
   
+  $.ajax({
+    "url": "http://127.0.0.1:3333/avali8/api/v1/submit-exam/exam/"+exam_readed.exam.id,
+    "type": "POST",
+    "contentType": "application/json",
+    "data": JSON.stringify({"token":user.token, "score":total_score, "exam":exam_readed.exam.id}),
+    "success": function(response){
+      console.log(response);
+    }
+  });
+
   alert("FeedBack\nScore: "+total_score+"\nFinished in: "+time_finished+" minutes\nContent of wrong questions: "+result);
   window.location.replace("../tela-inicial-logado/tela-inicial-logado-fazer-simulado.html");
 }
