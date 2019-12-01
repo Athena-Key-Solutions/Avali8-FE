@@ -28,7 +28,7 @@ function submitLogin(){
           var user = {token :response.token, email: emailInput, password: senhaInput};
           sessionStorage.setItem("user", JSON.stringify(user) );
           alert("Successful Login");
-          window.location.replace("../tela-inicial-logado/tela-inicial-logado.html");
+          window.location.assign("../tela-inicial-logado/tela-inicial-logado.html");
         },
         "error": function(){
           alert("Username or Password is invalid");

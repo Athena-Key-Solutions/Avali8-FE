@@ -1,5 +1,6 @@
 $(document).ready(function(){
     var user = JSON.parse(sessionStorage.getItem('user'));
+    checarLogado();
     //Requisição
     $.ajax({
       "url": "http://127.0.0.1:3333/avali8/api/v1/user",
@@ -9,6 +10,7 @@ $(document).ready(function(){
       "success": function(response){
         response.token = user.token;
         document.getElementById('username1').innerHTML = response.name;
+        response.password = user.password;
         sessionStorage.setItem("user", JSON.stringify(response) );
       }
   }); 
@@ -19,11 +21,20 @@ $(document).ready(function(){
         "contentType": "application/json",
         "data": JSON.stringify({"token":user.token}),
         "success": function(response){
+          sessionStorage.setItem("user_list", JSON.stringify(response));
           preencherGrafico(response);
         }
     });
-
+    
 });
+
+function checarLogado(){
+  var user = JSON.parse(sessionStorage.getItem('user'));
+  if(user==null){
+    alert("Please log in");
+    window.location.assign("../login/login.html");
+  }
+}
 
 function preencherGrafico(users){
   

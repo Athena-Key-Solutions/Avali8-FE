@@ -96,7 +96,7 @@ entregar = function(){
   });
 
   alert("FeedBack\nScore: "+total_score+"\nFinished in: "+time_finished+" minutes\nContent of wrong questions: "+result);
-  window.location.replace("../tela-inicial-logado/tela-inicial-logado-fazer-simulado.html");
+  window.location.assign("../tela-inicial-logado/tela-inicial-logado-fazer-simulado.html");
 }
 
 function preencherProva(exam){

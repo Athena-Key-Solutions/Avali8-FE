@@ -23,7 +23,7 @@ $(document).ready(function(){
                 sessionStorage.setItem("exam_selected", JSON.stringify(exams[x]));
             }
         }
-        window.location.replace("../fazerprova/fazer-prova.html");
+        window.location.assign("../fazerprova/fazer-prova.html");
     }
 
     function preencherSimulados(exams){

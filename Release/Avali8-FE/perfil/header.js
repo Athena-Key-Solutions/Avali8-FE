@@ -21,19 +21,19 @@ function logout(){
          console.log(response);
          sessionStorage.clear();
          alert("Sucessfull logout");
-         window.location.replace("../login/login.html");
+         window.location.assign("../login/login.html");
       }
   }); 
 }
 
 function perfil(){
-   window.location.replace("../perfil/perfil.html");
+   window.location.assign("../perfil/perfil.html");
 }
 
 function inicial(){
-   window.location.replace("../tela-inicial-logado/tela-inicial-logado.html");
+   window.location.assign("../tela-inicial-logado/tela-inicial-logado.html");
 }
 
 function editarPerfil(){
-   window.location.replace("../EditPerfil/EditarPerfil.html");
+   window.location.assign("../EditPerfil/EditarPerfil.html");
 }

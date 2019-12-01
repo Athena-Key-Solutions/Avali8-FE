@@ -1,27 +1,71 @@
-$(document).ready(function(){
+var users = JSON.parse(sessionStorage.getItem("user_list"));
+var user = JSON.parse(sessionStorage.getItem('user'));
 
-    var user = JSON.parse(sessionStorage.getItem('user'));
+$(document).ready(function(){
+    checarLogado();
     document.getElementById("nameinput").value = user.name;
     document.getElementById("emailinput").value = user.email;
     document.getElementById("usernameinput").value = user.username;
     document.getElementById("passwordinput").value = user.password;
     document.getElementById("confpasswordinput").value = user.password;
     document.getElementById("username").innerText = user.name;
+    
+    for(var i=0;i<users.length;i++){
+        if( (users[i].username==user.username) && (users[i].email == user.email) ){
+           users.splice(i, 1);
+        }
+    }
+    console.log(user);
 });
 
+function checarLogado(){
+    var user = JSON.parse(sessionStorage.getItem('user'));
+    if(user==null){
+      alert("Please log in");
+      window.location.assign("../login/login.html");
+    }
+  }
 
 function enviar(){
+
     var name = document.getElementById("nameinput").value;
     var email = document.getElementById("emailinput").value;
     var username = document.getElementById("usernameinput").value;
     var password = document.getElementById("passwordinput").value;
     var passwordconf = document.getElementById("confpasswordinput").value;
-    alert("clicou");
-    console.log(password);
+    
     if(password==passwordconf){
-        var changes = {"name":name, "email":email, "username": username, "password": password};
-        alert("requisição");
+        user.name = name;
+        user.email = email
+        user.username = username;
+        user.password = password;
+        
+        if(verifica(username, email)==false){
+            alert("Invalid username or email");
+        }else{
+            delete user.token;
+            $.ajax({
+                "url": "http://localhost:3333/avali8/api/v1/user/edit/"+user.id,
+                "type": "POST",
+                "contentType": "application/json",
+                "data": JSON.stringify(user),
+                "success": function(){
+                  alert("Data edited!!");
+                  windows.reload(true);
+                }
+            });
+        }
     }else{
         alert("Confirme your password!!");
     }
+    
+}
+
+function verifica(username, email){
+    for(var i=0;i<users.length;i++){
+        if( (users[i].username==username) || (users[i].email == email) ){
+           return false;
+        }
+    }
+    return true;
 }
