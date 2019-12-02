@@ -110,47 +110,11 @@ class UserController {
 
     if(parseInt(params.id) === user.id){
       
-      const data = request.post(['name','bio','password'])
+      const data = request.only(['name','bio','password','username','email'])
       
-      if(data.name && data.password && data.bio){
+      if(data.name && data.bio && data.password && data.username && data.email){
       
-        user.merge(data)
-        await user.save()
-        response.status(200).send({message: 'User has been updated.'})
-      
-      }else if(data.name && data.password && !data.bio){
-      
-        user.merge({name: data.name, password: data.password})
-        await user.save()
-        response.status(200).send({message: 'User has been updated.'})
-
-      }else if(data.name && data.bio && !data.password){
-      
-        user.merge({name: data.name, bio: data.bio})
-        await user.save()
-        response.status(200).send({message: 'User has been updated.'})
-
-      }else if(data.password && data.bio && !data.name){
-        
-        user.merge({password: data.password, bio: data.bio})
-        await user.save()
-        response.status(200).send({message: 'User has been updated.'})
-
-      }else if(data.name && !data.password && !data.bio){
-      
-        user.merge({name: data.name})
-        await user.save()
-        response.status(200).send({message: 'User has been updated.'})
-      
-      }else if(!data.name && !data.bio && data.password){
-      
-        user.merge({password: data.password})
-        await user.save()
-        response.status(200).send({message: 'User has been updated.'})
-      
-      }else if(!data.name && !data.password && data.bio){
-      
-        user.merge({bio: data.bio})
+        user.merge({name: data.name, bio: data.bio, password: data.password, username: data.username, email: data.email})
         await user.save()
         response.status(200).send({message: 'User has been updated.'})
       
@@ -161,7 +125,6 @@ class UserController {
     }else{
       response.status(401).send({message: "You don't have permission to edit this user."})
     }
-    
     
   }
   

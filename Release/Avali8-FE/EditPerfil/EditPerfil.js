@@ -39,19 +39,25 @@ function enviar(){
         user.email = email
         user.username = username;
         user.password = password;
+
+        sessionStorage.setItem("user", JSON.stringify(user));
         
         if(verifica(username, email)==false){
             alert("Invalid username or email");
         }else{
-            delete user.token;
+            var changes = {token: user.token, name: user.name, bio: user.bio, password: user.password, username: user.username, email: user.email}
+
             $.ajax({
                 "url": "http://localhost:3333/avali8/api/v1/user/edit/"+user.id,
                 "type": "POST",
                 "contentType": "application/json",
-                "data": JSON.stringify(user),
+                "data": JSON.stringify(changes),
                 "success": function(){
                   alert("Data edited!!");
-                  windows.reload(true);
+                  window.location.reload(true);
+                },
+                "error": function(response){
+                    console.log(response);
                 }
             });
         }

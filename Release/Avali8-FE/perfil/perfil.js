@@ -13,15 +13,16 @@ function editPost(nova)
 {
   var user = JSON.parse(sessionStorage.getItem('user'));
   user.bio = text;
-  delete user.token;
+  var changes = {token: user.token, name: user.name, bio: user.bio, password: user.password, username: user.username, email: user.email}
   $.ajax({
     "url": "http://localhost:3333/avali8/api/v1/user/edit/"+user.id,
     "type": "POST",
     "contentType": "application/json",
-    "data": JSON.stringify(user),
+    "data": JSON.stringify(changes),
     "success": function(response){
       alert("Bio edited!!");
-      windows.reload(true);
+      sessionStorage.setItem("user", JSON.stringify(user));
+      window.location.reload(true);
     }
   });
 }
