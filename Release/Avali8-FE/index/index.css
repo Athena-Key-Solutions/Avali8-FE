@@ -57,4 +57,55 @@ a{
 
 }
 
-  
+.description{
+    font: 20px Arial;
+    position:relative;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+#footer{
+    position: relative;
+    overflow: hidden; 
+    
+}
+
+.wrap {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden;
+    background: #3E3E3E;
+    color: #fff;
+    font:700 14px/26px 'Lucida Sans', sans-serif;
+    width:100%;
+}
+
+.column{
+    float:left;
+    width:25%;
+}
+
+.wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer a{
+    color: #fff;
+    font: 900 14px/26px 'Lucida Sans', sans-serif;
+    text-align: center;
+    float: initial;
+}
+
+footer h4{
+    text-align: center;
+}
+
+footer i{
+    float: left;
+}

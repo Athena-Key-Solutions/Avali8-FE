@@ -1,0 +1,139 @@
+/*Geral*/
+/*Resetando margin e padding padrões do navegador*/
+body{
+  margin: 0;
+  padding: 0;
+}
+a, p{
+  text-decoration: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  color: white;
+  font-weight: 900;
+}
+/*Cabeçalho da página*/
+header{
+  background-color: #2A2A2A;
+  width: 100%;
+  height: 55px;
+}
+header ul{
+  display: inline;
+  float: right;
+  margin-right: 5%;
+}
+
+header a{
+  margin: 15px;
+}
+
+#logo{
+  margin-left: 5%;
+  margin-top: 10px;
+  margin-bottom: 10%;
+  width: 150px;
+}
+
+
+/*Corpo da página*/
+.main{
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top:58px;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.background{
+  background-color: rgba(0,0,0,0.6);
+  background-size: cover;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.submain{
+  background-color: rgba(57, 57, 57, 0.8);
+  border-radius: 5%;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 30%;
+  width: 30%;
+  height: 60%;
+}
+
+.submain p{
+  text-align: left;
+  padding-top: 5%;
+  padding-left: 15%;
+}
+
+.submain a{
+  padding-left: 50%;
+  margin-bottom: 20%;
+  vertical-align:center;
+  display: flex;
+  font-size: 80%;
+}
+
+.formbox{
+  background-color: rgba(101, 101, 101, 0.5);
+  width: 100%;
+  height: 65%;
+}
+
+.inputboxes{
+  padding-top: 10%;
+  padding-bottom: 0%;
+}
+
+.emailbox, .passwordbox{
+  background-color: white;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.passwordbox{
+  margin-top: 1px;
+}
+
+.formbox input#emailinput, input#passwordinput{
+  border: none;
+  margin-left: 10%;
+  outline: none;
+  vertical-align: middle;
+}
+
+i{
+  color: #a5a5a5;
+  vertical-align: middle;
+  margin-left: -15%;
+}
+
+.formbox input#submit{
+  margin-top: 5%;
+  margin-bottom: 10%;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  background-color: #0068ea;
+  cursor: pointer;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  color: white;
+  font-weight: 800;
+  width: 80%;
+  height: 15%;
+  font-size: 130%;
+}
+
+.formbox input#submit:focus{
+  outline: none;
+}

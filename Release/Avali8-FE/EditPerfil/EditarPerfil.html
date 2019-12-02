@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="EditarPerfil.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Edite seu perfil</title>
+</head>
+
+<body>
+  <script src="EditarPerfil.js"></script>
+  <script src="EditPerfil.js"></script>
+
+  <header>
+    <img id="logo" src="avali8br.png" alt="Logo da avali8">
+    <ul>
+      <div class="dropdown">
+        <button class="dropbtn"><i class="material-icons">menu</i></button>
+        <div class="dropdown-content">
+          <a href="#">Página inicial</a>
+          <a href="#">Meu Perfil</a>
+          <a href="#">Editar Perfil</a>
+          <a href="#">Sair</a>
+        </div>
+      </div>
+    </ul>
+
+    <p id="username">Joaquim</p>
+    
+    <div class="line">
+    </div>
+  </header>
+
+  <div class="form" id="form">
+      <p id"TextEdit">Editt your Profile</p>
+
+      <ul>
+        <p class="inputstext">Name <input id="nameinput" name="nome" class="input" required="required" type="text" placeholder="your name"> </p>
+
+        <p class="inputstext">Email <input id="emailinput" name="email" class="input" required="required" type="email" placeholder="your email"> </p>
+
+        <p class="inputstext">Username <input id="usernameinput" name="username" class="input" required="required" type="text" placeholder="your username"> </p>
+
+        <p class="inputstext">Password <input id="passwordinput" name="password" class="input" required="required" type="password" placeholder="your password"> </p>
+
+        <p class="inputstext">Confirm Password <input id="confpasswordinput" name="confirmpassword" class="input" required="required" type="password" placeholder="confirm your password"> </p>
+      </ul>
+      
+      <br> <br>
+      <p>Social Media</p>
+
+      <ul id="buttonslist">
+        <a name="Facebook" id="facebookbutton" class="syncbutton" href="facebook.com" role="button">Access facebook</a>
+        <a name="LinkedIn" id="linkedinbutton" class="syncbutton" href="https://br.linkedin.com" role="button">Access LinkedIn</a>
+        <a name="Twitter" id="twitterbutton" class="syncbutton" href="https://twitter.com" role="button">Acess Twitter</a>
+      
+      </ul>
+
+      <br><br><br><br>
+      <div class="savebutton">
+          <a name="SaveChanges" id="savebutton"  role="button" onclick="enviar()">Salve changes</a>
+      </div>
+      
+  </div>
+
+</body>
+
+</html>
