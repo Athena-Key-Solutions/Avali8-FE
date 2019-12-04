@@ -138,6 +138,15 @@ footer i{
     color:#fff;
 }
 
+.link{color: #fff; cursor: pointer;}
+.box{
+    text-align: center;
+    margin: 15px 15px 20px;
+    font-size: 20px;
+    color:#fff;
+    padding: 15px 20px;
+    
+}
 .form-container .form-wrap .form-box {
     margin: 0px 0px 15px;
 }
@@ -154,12 +163,12 @@ footer i{
     justify-content: center;
 }
 
-.form-container .form-wrap .form-submit input[type="submit"]{
+.form-container .form-wrap .form-submit input[type="button"]{
     padding: 4px 10px;
     border-radius: 2px;
     border: none;
     width: 100%;
-    background: #0761E2;
+    background: #3E3E3E;
     color: #fff;
     font-weight: 800;
     cursor: pointer;
